@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header{
+    background-color: lightpink;
+}
+
+nav{
+    background-color: rgb(238, 177, 177);
+   
+}
+
+li{
+    display: inline-block;
+}
+main{
+    background-color: mistyrose;
+    
+}
+
+section{
+    background-color: rgb(184, 151, 151);
+
+}
+
+form{
+    text-align:start;
+    background-color:mistyrose }
+
+footer{
+    background-color: rgb(238, 177, 177);
+
+}
+
+h2{
+    color: indianred;
+    font-size: larger;
+
+}
+@media (max-width: 800px){
+    * {
+        background-color: lightpink;
+        
+    }
+    
+}
+.boton {
+    width: 60px;
+    height: 30px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 100px;
+    border: #96039b solid 2px;
+    background-color: pink
+}
+.boton i {
+    font-size: 1rem;
+    color:deeppink
+}
+nav li:last-child::before{
+    content: "";
+    position:absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: orchid;
+    left: 0;
+    right: unset;
+
+}
+
+nav li:last-child.active::before {
+    right: 0;
+    left: unset;
+}
+
+nav li:last-child.active i:first-child{
+    color: #fff;
+}
+
+nav li:last-child.active{
+    background-color: #96039b;
+    border: solid 2px #fff;
+}
+
+body.active nav{
+    background-color: #270029;
+    
+}
+
+body.active nav ul li a {
+    color:rgb(238, 177, 177)
+}
+
+body.active header{
+    background-color: #55002f;
+}
+
+body.active main{
+    background-color: #55002f;
+}
+
+body.active main h2{
+    color: #fff;
+}
+
+body.active main p{
+    color: #fff;
+}
+
+body.active section{
+    background-color: #270029;
+}
+
+body.active footer{
+    background-color: #55002f;
+}
+
+body.active footer a {
+    color:rgb(238, 177, 177);
