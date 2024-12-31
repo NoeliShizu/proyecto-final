@@ -1,39 +1,20 @@
-const botonSlider = document.querySelector(".boton");
+const namePokemon= document.getElementById("namepokemon");
 
+const imgPokemon= document.getElementById("pokeimage");
 
-document.addEventListener("DOMContentLoaded",e=>{
-    cargarDarkModeDeLocalStorage()
-    botonSlider.addEventListener("click", darkMode)
-})
+const peticionApi =async ()=> {
 
-function ponerDarkMode(){
-        botonSlider.classList.toggle("active");
-        document.body.classList.toggle("active");
-        guardarDarkModeLocalStorage(botonSlider.classList.contains("active"))}
+    const peticionGet = await fetch("https://pokeapi.co/api/v2/pokemon/charizard");
 
-function guardarDarkModeLocalStorage(estado){
-        localStorage.setItem("darkMode", estado)
+    const datosPoke = await peticionGet.json();
+
+    const imgCharmander= datosPoke.sprites.front_shiny;
+
+    const nombreCharm= datosPoke.species.name;
+
+    namePokemon.textContent= nombreCharm;
+    imgPokemon.src =imgCharmander;
 }
 
-function cargarDarkModeDeLocalStorage(){
-    const darkModeGuardado = localStorage.getItem("darkMode")== "true";
-    if(darkModeGuardado){
-        botonSlider.classList.add("active")
-        document.body.classList.add("active")
-    }
-   
-}
-//const url = "https://api.thecatapi.com/v1/images";
-//const api_key = "live_VgxPKLwbY9hWn6mV7K3hQWu8awLCiD8yW0cAr9Q7uf8HUohoHGuIXOZTwfH63fzB"
-//let storedImages = []
+peticionApi();
 
-//fetch (url,{headers: {
-//    "x-api-key" = api_key
-//}})
-//.then((response)=> {return response.json();})
-
-
-
-//fetch("https://api.thecatapi.com/v1/images/search?limit=10&api_key=live_VgxPKLwbY9hWn6mV7K3hQWu8awLCiD8yW0cAr9Q7uf8HUohoHGuIXOZTwfH63fzB").then((respuesta)=>respuesta.json()).then((datos)=>{
-//    console.log(datos)
-//}
